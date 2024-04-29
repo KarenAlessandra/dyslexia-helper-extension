@@ -37,7 +37,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
       line.style.backgroundColor = rgbaColor; // Apply translucent color to the line
     } else if (message.type === 'disableExtension') {
     // Deactivate the line and turn off the extension
-    line.style.display == 'none'; // Hide the line
+    line.style.display = 'none'; // Hide the line
     sendResponse({ status: 'Extension disabled' }); // Send response back to the background script
     // chrome.runtime.sendMessage({ type: 'disableExtension' }); // Send message to background script to disable the extension
   }
