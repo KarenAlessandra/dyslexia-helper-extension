@@ -1,17 +1,37 @@
+:root {
+    --white-cloud: #fffcf5;
+    --blue-navy: #374375;
+    --blue-periwinkle: #babde2;
+    --red-maroon: #895159;
+    --beige-peach: #dfaea1;
+}
+
+body {
+    background-color:var(--white-cloud);
+    font: 16px Arial, sans-serif;
+    letter-spacing: 1px;
+    margin: 15px;
+}
+
 #line {
     z-index: 9999;
 }
 
+
 h1 {
-    font-size: 18px;
-    font-weight: bolder;
-    color: #084b49;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--blue-navy);
+    text-transform: uppercase; 
+    text-align: center;
+    letter-spacing: 2px;
 }
 
 p {
     font-size: 16px;
-    font-weight: bold;
-    color: #3c3d3e;
+    font-weight: 500;
+    color: var(--blue-navy);
+    margin-bottom: 1px;
 }
 
 select {
@@ -20,30 +40,51 @@ select {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    border: 1px solid #737679;
-    color: #737679;
-    background-color: #96eafd;
+    margin-top: 10px;
+    border: none;
+    color: var(--blue-periwinkle);
+    background-color: var(--blue-navy);
     border-radius: 8px;
 }
 
 option {
-    color: #3c3d3e;
-    background-color: #c4f1fb;
-
+    color: var(--blue-navy);
+    background-color: var(--blue-periwinkle);
 }
+
+select:hover {
+    background-color: var(--blue-periwinkle);
+    color: var(--blue-navy);
+}
+
+input {
+    margin-bottom: 20px;
+    margin-left: 37px;
+    -webkit-appearance: none;
+        border: none;
+        width: 80px;
+        height: 30px;
+}
+
 button {
     font-size: 15px;
-    padding: 10px 20px;
+    padding: 10px 25px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    background-color: #1db4d6;
-    color: #c4f1fb;
+    background-color: var(--blue-navy);
+    color: var(--blue-periwinkle);
     border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0a6a7e;
+    background-color: var(--blue-periwinkle);
+    color: var(--blue-navy);
+}
+
+button.disableButton:hover {
+    background-color: var(--red-maroon) !important;
+    color: var(--beige-peach) !important;
 }
