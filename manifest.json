@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "Linha Translúcida",
+    "version": "1.0",
+    "description": "Uma extensão que exibe uma linha translúcida para ajudar na leitura.",
+    "permissions": [
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "background": {
+        "scripts": [
+            "popup.js"
+        ],
+        "persistent": false
+    }
+}

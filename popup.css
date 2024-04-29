@@ -1,0 +1,49 @@
+#line {
+    z-index: 9999;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #084b49;
+}
+
+p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3c3d3e;
+}
+
+select {
+    font-size: 15px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #737679;
+    color: #737679;
+    background-color: #96eafd;
+    border-radius: 8px;
+}
+
+option {
+    color: #3c3d3e;
+    background-color: #c4f1fb;
+
+}
+button {
+    font-size: 15px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #1db4d6;
+    color: #c4f1fb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0a6a7e;
+}
