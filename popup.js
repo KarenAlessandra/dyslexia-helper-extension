@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function disableLine() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {type: 'disableLine'});
+       chrome.tabs.sendMessage(tabs[0].id, {type: 'disableExtension'}, function(response) {
+        console.log(response.status); // Log response from content script
+    });
     });
   }
 });

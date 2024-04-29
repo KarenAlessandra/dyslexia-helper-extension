@@ -19,24 +19,28 @@ body {
 
 
 h1 {
-    font-size: 16px;
-    font-weight: 800;
+    font-size: 18px;
+    font-weight: 1000;
     color: var(--blue-navy);
     text-transform: uppercase; 
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 6px;
     margin-top: 3px;
+    line-height: 30px;
 }
 
 p {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: bold;
     color: var(--blue-navy);
     margin-bottom: 1px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 select {
-    font-size: 15px;
+    position: relative;
+    font-size: 13px;
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
@@ -45,12 +49,23 @@ select {
     border: none;
     color: var(--blue-periwinkle);
     background-color: var(--blue-navy);
-    border-radius: 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 option {
     color: var(--blue-navy);
     background-color: var(--blue-periwinkle);
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+option:hover {
+    background-color: var(--blue-periwinkle);
+    color: var(--blue-navy);
 }
 
 select:hover {
@@ -58,17 +73,26 @@ select:hover {
     color: var(--blue-navy);
 }
 
+select.selected {
+    color: var(--blue-periwinkle);
+    background-color: var(--blue-navy);
+    height:10px;
+}
+
 input {
     margin-bottom: 20px;
-    margin-left: 37px;
+    margin-left: 46px;
     -webkit-appearance: none;
         border: none;
-        width: 80px;
-        height: 30px;
+        width: 100px;
+        height: 33px;
 }
 
 button {
-    font-size: 15px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
     padding: 10px 25px;
     margin-left: 10px;
     margin-right: 10px;
@@ -76,8 +100,7 @@ button {
     background-color: var(--blue-navy);
     color: var(--blue-periwinkle);
     border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    border-radius: 2px;
 }
 
 button:hover {

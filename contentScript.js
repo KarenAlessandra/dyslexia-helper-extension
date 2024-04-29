@@ -35,11 +35,12 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     } else if (selectedStyle === 'thick') {
       line.style.height = '20px'; // Thick line
       line.style.backgroundColor = rgbaColor; // Apply translucent color to the line
-    } else if (selectedStyle === 'disable') {
-      // Deactivate the line
-      removeLine();
-      return;
-    }
+    } else if (message.type === 'disableExtension') {
+    // Deactivate the line and turn off the extension
+    line.style.display == 'none'; // Hide the line
+    sendResponse({ status: 'Extension disabled' }); // Send response back to the background script
+    // chrome.runtime.sendMessage({ type: 'disableExtension' }); // Send message to background script to disable the extension
+  }
     line.style.display = 'block'; // Ensure the line is visible
   }
 });
