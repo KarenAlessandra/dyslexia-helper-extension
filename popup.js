@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
   applyStyleButton.addEventListener('click', applyLineStyle);
   disableLineButton.addEventListener('click', disableLine);
 
+  console.log(applyStyleButton); // Verifica se o botão de aplicar estilo foi selecionado corretamente
+  console.log(disableLineButton); // Verifica se o botão de desativar linha foi selecionado corretamente
+
   function applyLineStyle() {
     var selectedStyle = lineStyleSelect.value;
     var selectedColor = lineColorInput.value;

@@ -32,14 +32,19 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     if (selectedStyle === 'thin') {
       line.style.height = '5px'; // Thin line
       line.style.backgroundColor = rgbaColor; // Apply translucent color to the line
+    } else if (selectedStyle === 'med') {
+      line.style.height = '20px'; // Med line
+      line.style.backgroundColor = rgbaColor; // Apply translucent color to the line
     } else if (selectedStyle === 'thick') {
-      line.style.height = '20px'; // Thick line
+      line.style.height = '40px'; // Thick line
       line.style.backgroundColor = rgbaColor; // Apply translucent color to the line
     } else if (message.type === 'disableExtension') {
-    // Deactivate the line and turn off the extension
-    line.style.display = 'none'; // Hide the line
-    sendResponse({ status: 'Extension disabled' }); // Send response back to the background script
-    // chrome.runtime.sendMessage({ type: 'disableExtension' }); // Send message to background script to disable the extension
+      // Deactivate the line and turn off the extension
+      line.style.display = 'none'; // Hide the line
+      removeLine();
+      // sendResponse({ status: 'Extension disabled' }); // Send response back to the background script
+      chrome.runtime.sendMessage({ type: 'disableExtension' }); // Send message to background script to disable the extension
+      return; // Stop execution
   }
     line.style.display = 'block'; // Ensure the line is visible
   }
