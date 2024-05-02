@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "Linha Translúcida",
+    "name": "Dyslexia Helper Extension",
     "version": "1.0",
-    "description": "Uma extensão que exibe uma linha translúcida para ajudar na leitura.",
+    "description": "Uma extensão que exibe uma linha translúcida para ajudar na leitura. Voltado para pessoas com dislexia.",
     "permissions": [
         "activeTab"
     ],
