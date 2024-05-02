@@ -1,4 +1,7 @@
-document.addEventListener('DOMContentLoaded', function () {
+// alert("Popup script loaded");
+console.log("Popup script loaded"); // Add this line at the beginning of your popup.js file
+
+document.addEventListener('DOMContentLoaded', function () { // Wait for the DOM content to be fully loaded
   var lineStyleSelect = document.getElementById('lineStyle');
   var lineColorInput = document.getElementById('lineColor');
   var applyStyleButton = document.getElementById('applyStyle');
@@ -7,23 +10,24 @@ document.addEventListener('DOMContentLoaded', function () {
   applyStyleButton.addEventListener('click', applyLineStyle);
   disableLineButton.addEventListener('click', disableLine);
 
-  console.log(applyStyleButton); // Verifica se o botão de aplicar estilo foi selecionado corretamente
-  console.log(disableLineButton); // Verifica se o botão de desativar linha foi selecionado corretamente
+  var isLineDisabled = false; // Flag to track if the line is disabled
 
   function applyLineStyle() {
     var selectedStyle = lineStyleSelect.value;
     var selectedColor = lineColorInput.value;
 
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {type: 'applyLineStyle', style: selectedStyle, color: selectedColor});
+    isLineDisabled = false; // Reset the flag to indicate that the line is enabled
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, { type: 'applyLineStyle', style: selectedStyle, color: selectedColor, isDisabled: isLineDisabled });
     });
   }
 
   function disableLine() {
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-       chrome.tabs.sendMessage(tabs[0].id, {type: 'disableExtension'}, function(response) {
-        console.log(response.status); // Log response from content script
-    });
+    isLineDisabled = true; // Update the flag to indicate that the line is disabled
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) { // Query the active tab
+      chrome.tabs.sendMessage(tabs[0].id, { type: 'disableExtension', isDisabled: isLineDisabled }); // Send a message to the content script to disable the line
     });
   }
 });
