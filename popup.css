@@ -1,5 +1,6 @@
 :root {
-    --white-cloud: #fffcf5;
+    /* --white-cloud: #fffcf5; */
+    --white-cloud: #ebe3f2;
     --blue-navy: #374375;
     --blue-periwinkle: #babde2;
     --red-maroon: #895159;
@@ -71,12 +72,6 @@ option:hover {
 select:hover {
     background-color: var(--blue-periwinkle);
     color: var(--blue-navy);
-}
-
-select.selected {
-    color: var(--blue-periwinkle);
-    background-color: var(--blue-navy);
-    height:10px;
 }
 
 input {
